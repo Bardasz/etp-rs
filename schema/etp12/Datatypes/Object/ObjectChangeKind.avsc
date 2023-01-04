@@ -1,0 +1,15 @@
+{
+	"type": "enum",
+	"namespace": "Energistics.Etp.v12.Datatypes.Object",
+	"name": "ObjectChangeKind",
+	"symbols":
+	[
+		"insert",
+		"update",
+		"authorized",
+		"joined",
+		"unjoined",
+		"joinedSubscription",
+		"unjoinedSubscription"
+	]
+}

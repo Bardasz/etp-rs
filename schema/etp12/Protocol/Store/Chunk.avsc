@@ -1,0 +1,16 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.Store",
+	"name": "Chunk",
+	"protocol": "4",
+	"messageType": "8",
+	"senderRole": "store,customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{ "name": "blobId", "type": "Energistics.Etp.v12.Datatypes.Uuid" },
+		{ "name": "data", "type": "bytes" },
+		{ "name": "final", "type": "boolean" }
+	]
+}

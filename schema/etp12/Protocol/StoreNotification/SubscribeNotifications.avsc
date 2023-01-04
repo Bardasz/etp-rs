@@ -1,0 +1,18 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.StoreNotification",
+	"name": "SubscribeNotifications",
+	"protocol": "5",
+	"messageType": "6",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{
+			"name": "request",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.Object.SubscriptionInfo" }
+		}
+	]
+}

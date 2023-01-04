@@ -1,0 +1,32 @@
+[package]
+name = "etp-rs"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+serde = { version = "1.0.151", features = ["derive"] }
+#serde_bytes = "0.11"
+serde_bytes = { path = "../serde-bytes" }
+apache-avro = { version = "0.15.0", features = ["derive"] }
+url = "2.3.1"
+http-auth-basic = "0.3.3"
+tungstenite = "0.18.0"
+toml-cfg = "0.1"
+log = "0.4.17"
+thiserror = { default-features = false, version = "1.0.38" }
+flate2 = "1.0.25"
+libflate = "1.2.0"
+
+
+[dependencies.uuid]
+version = "1.2.2"
+features = [
+    "v4",                # Lets you generate random UUIDs
+    "fast-rng",          # Use a faster (but still sufficiently random) RNG
+    "macro-diagnostics", # Enable better diagnostics for compile-time UUIDs
+]
+
+[patch.crates-io]
+apache-avro = { path = "../apache-avro/lang/rust/avro" }

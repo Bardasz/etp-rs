@@ -1,0 +1,18 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.ChannelSubscribe",
+	"name": "ChannelData",
+	"protocol": "21",
+	"messageType": "4",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ 
+			"name": "data",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.ChannelData.DataItem" }
+		}
+	]
+}

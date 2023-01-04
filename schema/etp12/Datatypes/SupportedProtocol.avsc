@@ -1,0 +1,15 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes",
+	"name": "SupportedProtocol",
+	"fields":
+	[
+		{ "name": "protocol", "type": "int" },
+		{ "name": "protocolVersion", "type": "Energistics.Etp.v12.Datatypes.Version" },
+		{ "name": "role", "type": "string" },
+		{
+			"name": "protocolCapabilities",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.DataValue" }, "default": {}
+		}
+	]
+}

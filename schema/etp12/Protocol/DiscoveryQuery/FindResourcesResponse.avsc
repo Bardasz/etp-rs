@@ -1,0 +1,18 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.DiscoveryQuery",
+	"name": "FindResourcesResponse",
+	"protocol": "13",
+	"messageType": "2",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{
+			"name": "resources",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.Object.Resource" }, "default": []
+		},
+		{ "name": "serverSortOrder", "type": "string" }
+	]
+}

@@ -1,0 +1,6 @@
+{
+	"type": "fixed",
+	"namespace": "Energistics.Etp.v12.Datatypes",
+	"name": "Uuid",
+	"size": 16
+}

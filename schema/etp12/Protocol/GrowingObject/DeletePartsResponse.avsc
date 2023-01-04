@@ -1,0 +1,17 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.GrowingObject",
+	"name": "DeletePartsResponse",
+	"protocol": "6",
+	"messageType": "11",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{
+			"name": "success",
+			"type": { "type": "map", "values": "string" }
+		}
+	]
+}

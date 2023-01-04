@@ -1,0 +1,13 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes.Object",
+	"name": "SubscriptionInfo",
+	"fields":
+	[
+		{ "name": "context", "type": "Energistics.Etp.v12.Datatypes.Object.ContextInfo" },
+		{ "name": "scope", "type": "Energistics.Etp.v12.Datatypes.Object.ContextScopeKind" },
+		{ "name": "requestUuid", "type": "Energistics.Etp.v12.Datatypes.Uuid" },
+		{ "name": "includeObjectData", "type": "boolean" },
+		{ "name": "format", "type": "string", "default": "xml" }
+	]
+}

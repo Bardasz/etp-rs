@@ -1,0 +1,19 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.GrowingObject",
+	"name": "GetPartsByRangeResponse",
+	"protocol": "6",
+	"messageType": "10",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{ "name": "uri", "type": "string" },
+		{ "name": "format", "type": "string", "default": "xml" },
+		{ 
+			"name": "parts",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.Object.ObjectPart" }
+		}
+	]
+}

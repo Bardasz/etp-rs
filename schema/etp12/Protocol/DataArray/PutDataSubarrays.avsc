@@ -1,0 +1,18 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.DataArray",
+	"name": "PutDataSubarrays",
+	"protocol": "9",
+	"messageType": "5",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{
+			"name": "dataSubarrays",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.DataArrayTypes.PutDataSubarraysType" }
+		}
+	]
+}

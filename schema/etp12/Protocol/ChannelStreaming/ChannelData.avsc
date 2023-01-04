@@ -1,0 +1,18 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.ChannelStreaming",
+	"name": "ChannelData_CS",
+	"protocol": "1",
+	"messageType": "2",
+	"senderRole": "producer",
+	"protocolRoles": "producer,consumer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ 
+			"name": "data",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.ChannelData.DataItem" }
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.Store",
+	"name": "DeleteDataObjectsResponse",
+	"protocol": "4",
+	"messageType": "10",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{
+			"name": "deletedUris",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.ArrayOfString" }
+		}
+	]
+}

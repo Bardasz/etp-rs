@@ -1,0 +1,18 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.GrowingObject",
+	"name": "PutGrowingDataObjectsHeader",
+	"protocol": "6",
+	"messageType": "16",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{
+			"name": "dataObjects",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.Object.DataObject" }
+		}
+	]
+}

@@ -1,0 +1,15 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes.Object",
+	"name": "PartsMetadataInfo",
+	"fields":
+	[
+		{ "name": "uri", "type": "string" },
+		{ "name": "name", "type": "string" },
+		{ "name": "index", "type": "Energistics.Etp.v12.Datatypes.ChannelData.IndexMetadataRecord" },
+		{
+			"name": "customData",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.DataValue" }, "default": {}
+		}
+	]
+}

@@ -1,0 +1,18 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.ChannelDataLoad",
+	"name": "ChannelData_CDL",
+	"protocol": "22",
+	"messageType": "4",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ 
+			"name": "data",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.ChannelData.DataItem" }
+		}
+	]
+}

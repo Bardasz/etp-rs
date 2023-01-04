@@ -1,0 +1,24 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes.Object",
+	"name": "Resource",
+	"fields":
+	[
+		{ "name": "uri", "type": "string" },
+		{
+			"name": "alternateUris",
+			"type": { "type": "array", "items": "string" }, "default": []
+		},
+		{ "name": "name", "type": "string" },
+		{ "name": "sourceCount", "type": ["null", "int"], "default": null },
+		{ "name": "targetCount", "type": ["null", "int"], "default": null },
+		{ "name": "lastChanged", "type": "long" },
+		{ "name": "storeLastWrite", "type": "long" },
+		{ "name": "storeCreated", "type": "long" },
+		{ "name": "activeStatus", "type": "Energistics.Etp.v12.Datatypes.Object.ActiveStatusKind" },
+		{
+			"name": "customData",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.DataValue" }, "default": {}
+		}
+	]
+}

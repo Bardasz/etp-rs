@@ -1,0 +1,17 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.ChannelSubscribe",
+	"name": "GetRangesResponse",
+	"protocol": "21",
+	"messageType": "10",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{
+			"name": "data",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.ChannelData.DataItem" }, "default": []
+		}
+	]
+}

@@ -1,0 +1,13 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes",
+	"name": "SupportedDataObject",
+	"fields":
+	[
+		{ "name": "qualifiedType", "type": "string" },
+		{
+			"name": "dataObjectCapabilities",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.DataValue" }, "default": {}
+		}
+	]
+}

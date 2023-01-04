@@ -1,0 +1,17 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.Discovery",
+	"name": "GetResourcesResponse",
+	"protocol": "3",
+	"messageType": "4",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{
+			"name": "resources",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.Object.Resource" }, "default": []
+		}
+	]
+}

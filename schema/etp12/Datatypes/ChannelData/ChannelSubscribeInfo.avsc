@@ -1,0 +1,12 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes.ChannelData",
+	"name": "ChannelSubscribeInfo",
+	"fields":
+	[
+		{ "name": "channelId", "type": "long" },
+		{ "name": "startIndex", "type": "Energistics.Etp.v12.Datatypes.IndexValue" },
+		{ "name": "dataChanges", "type": "boolean", "default": true },
+		{ "name": "requestLatestIndexCount", "type": ["null", "int"] }
+	]
+}

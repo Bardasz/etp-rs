@@ -1,0 +1,11 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes.ChannelData",
+	"name": "OpenChannelInfo",
+	"fields":
+	[
+		{ "name": "metadata", "type": "Energistics.Etp.v12.Datatypes.ChannelData.ChannelMetadataRecord" },
+		{ "name": "preferRealtime", "type": "boolean", "default": true },
+		{ "name": "dataChanges", "type": "boolean", "default": true }
+	]
+}

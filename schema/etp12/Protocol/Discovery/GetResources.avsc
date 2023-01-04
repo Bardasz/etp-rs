@@ -1,0 +1,20 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.Discovery",
+	"name": "GetResources",
+	"protocol": "3",
+	"messageType": "1",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ "name": "context", "type": "Energistics.Etp.v12.Datatypes.Object.ContextInfo" },
+		{ "name": "scope", "type": "Energistics.Etp.v12.Datatypes.Object.ContextScopeKind" },
+		{ "name": "countObjects", "type": "boolean", "default": false },
+		{ "name": "storeLastWriteFilter", "type": ["null", "long"] },
+		{ "name": "activeStatusFilter", "type": ["null", "Energistics.Etp.v12.Datatypes.Object.ActiveStatusKind"] },
+		{ "name": "includeEdges", "type": "boolean", "default": false }
+	]
+}

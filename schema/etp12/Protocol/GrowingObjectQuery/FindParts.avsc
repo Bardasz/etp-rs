@@ -1,0 +1,16 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.GrowingObjectQuery",
+	"name": "FindParts",
+	"protocol": "16",
+	"messageType": "1",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ "name": "uri", "type": "string" },
+		{ "name": "format", "type": "string", "default": "xml" }
+	]
+}

@@ -1,0 +1,19 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.StoreQuery",
+	"name": "FindDataObjects",
+	"protocol": "14",
+	"messageType": "1",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ "name": "context", "type": "Energistics.Etp.v12.Datatypes.Object.ContextInfo" },
+		{ "name": "scope", "type": "Energistics.Etp.v12.Datatypes.Object.ContextScopeKind" },
+		{ "name": "storeLastWriteFilter", "type": ["null", "long"] },
+		{ "name": "activeStatusFilter", "type": ["null", "Energistics.Etp.v12.Datatypes.Object.ActiveStatusKind"] },
+		{ "name": "format", "type": "string", "default": "xml" }
+	]
+}

@@ -1,0 +1,40 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.Core",
+	"name": "RequestSession",
+	"protocol": "0",
+	"messageType": "1",
+	"senderRole": "client",
+	"protocolRoles": "client, server",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ "name": "applicationName", "type": "string" },
+		{ "name": "applicationVersion", "type": "string" },
+		{ "name": "clientInstanceId", "type": "Energistics.Etp.v12.Datatypes.Uuid" },
+		{ 
+			"name": "requestedProtocols",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.SupportedProtocol" }
+		},
+		{ 
+			"name": "supportedDataObjects",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.SupportedDataObject" }
+		},
+		{
+			"name": "supportedCompression",
+			"type": { "type": "array", "items": "string" }, "default": []
+		},
+		{
+			"name": "supportedFormats",
+			"type": { "type": "array", "items": "string" }, "default": ["xml"]
+		},
+		{ "name": "currentDateTime", "type": "long" },
+		{ "name": "earliestRetainedChangeTime", "type": "long" },
+		{ "name": "serverAuthorizationRequired", "type": "boolean", "default": false },
+		{
+			"name": "endpointCapabilities",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.DataValue" }, "default": {}
+		}
+	]
+}

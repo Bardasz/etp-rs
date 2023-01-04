@@ -1,0 +1,12 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes",
+	"name": "ArrayOfNullableLong",
+	"fields":
+	[
+		{
+			"name": "values",
+			"type": { "type": "array", "items": ["null", "long"] }
+		}
+	]
+}

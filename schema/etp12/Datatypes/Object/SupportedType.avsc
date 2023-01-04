@@ -1,0 +1,11 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes.Object",
+	"name": "SupportedType",
+	"fields":
+	[
+		{ "name": "dataObjectType", "type": "string" },
+		{ "name": "objectCount", "type": ["null", "int"] },
+		{ "name": "relationshipKind", "type": "Energistics.Etp.v12.Datatypes.Object.RelationshipKind" }
+	]
+}

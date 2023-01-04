@@ -1,0 +1,18 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.StoreNotification",
+	"name": "UnsolicitedStoreNotifications",
+	"protocol": "5",
+	"messageType": "8",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ 
+			"name": "subscriptions",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.Object.SubscriptionInfo" }
+		}
+	]
+}

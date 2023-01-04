@@ -1,0 +1,17 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes.Object",
+	"name": "ContextInfo",
+	"fields":
+	[
+		{ "name": "uri", "type": "string" },
+		{ "name": "depth", "type": "int" },
+		{
+			"name": "dataObjectTypes",
+			"type": { "type": "array", "items": "string" }, "default": []
+		},
+		{ "name": "navigableEdges", "type": "Energistics.Etp.v12.Datatypes.Object.RelationshipKind" },
+		{ "name": "includeSecondaryTargets", "type": "boolean", "default": false },
+		{ "name": "includeSecondarySources", "type": "boolean", "default": false }
+	]
+}

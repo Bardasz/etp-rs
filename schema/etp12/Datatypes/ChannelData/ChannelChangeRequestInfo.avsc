@@ -1,0 +1,13 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes.ChannelData",
+	"name": "ChannelChangeRequestInfo",
+	"fields":
+	[
+		{ "name": "sinceChangeTime", "type": "long" },
+		{ 
+			"name": "channelIds",
+			"type": { "type": "array", "items": "long" }
+		}
+	]
+}

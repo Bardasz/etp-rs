@@ -1,0 +1,18 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.ChannelDataLoad",
+	"name": "ChannelsClosed",
+	"protocol": "22",
+	"messageType": "7",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{ "name": "reason", "type": "string" },
+		{
+			"name": "id",
+			"type": { "type": "map", "values": "long" }
+		}
+	]
+}

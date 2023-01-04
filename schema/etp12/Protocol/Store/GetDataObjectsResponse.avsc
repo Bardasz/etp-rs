@@ -1,0 +1,17 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.Store",
+	"name": "GetDataObjectsResponse",
+	"protocol": "4",
+	"messageType": "4",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{
+			"name": "dataObjects",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.Object.DataObject" }, "default": {}
+		}
+	]
+}

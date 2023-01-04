@@ -1,0 +1,19 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.Core",
+	"name": "AuthorizeResponse",
+	"protocol": "0",
+	"messageType": "7",
+	"senderRole": "client,server",
+	"protocolRoles": "client, server",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ "name": "success", "type": "boolean" },
+		{ 
+			"name": "challenges",
+			"type": { "type": "array", "items": "string" }
+		}
+	]
+}

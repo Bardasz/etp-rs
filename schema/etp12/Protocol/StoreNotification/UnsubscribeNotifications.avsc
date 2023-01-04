@@ -1,0 +1,15 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.StoreNotification",
+	"name": "UnsubscribeNotifications",
+	"protocol": "5",
+	"messageType": "4",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ "name": "requestUuid", "type": "Energistics.Etp.v12.Datatypes.Uuid" }
+	]
+}

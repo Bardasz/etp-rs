@@ -1,0 +1,15 @@
+{
+	"type": "enum",
+	"namespace": "Energistics.Etp.v12.Datatypes",
+	"name": "AnyArrayType",
+	"symbols":
+	[
+		"arrayOfBoolean",
+		"arrayOfInt",
+		"arrayOfLong",
+		"arrayOfFloat",
+		"arrayOfDouble",
+		"arrayOfString",
+		"bytes"
+	]
+}

@@ -1,0 +1,12 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes",
+	"name": "ArrayOfFloat",
+	"fields":
+	[
+		{ 
+			"name": "values",
+			"type": { "type": "array", "items": "float" }
+		}
+	]
+}

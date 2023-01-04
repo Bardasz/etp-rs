@@ -1,0 +1,35 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes",
+	"name": "ServerCapabilities",
+	"fields":
+	[
+		{ "name": "applicationName", "type": "string" },
+		{ "name": "applicationVersion", "type": "string" },
+		{ "name": "contactInformation", "type": "Energistics.Etp.v12.Datatypes.Contact" },
+		{
+			"name": "supportedCompression",
+			"type": { "type": "array", "items": "string" }, "default": []
+		},
+		{
+			"name": "supportedEncodings",
+			"type": { "type": "array", "items": "string" }, "default": ["binary"]
+		},
+		{
+			"name": "supportedFormats",
+			"type": { "type": "array", "items": "string" }, "default": ["xml"]
+		},
+		{ 
+			"name": "supportedDataObjects",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.SupportedDataObject" }
+		},
+		{ 
+			"name": "supportedProtocols",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.SupportedProtocol" }
+		},
+		{
+			"name": "endpointCapabilities",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.DataValue" }, "default": {}
+		}
+	]
+}

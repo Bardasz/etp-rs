@@ -1,0 +1,19 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.ChannelSubscribe",
+	"name": "GetChangeAnnotations",
+	"protocol": "21",
+	"messageType": "14",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{
+			"name": "channels",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.ChannelData.ChannelChangeRequestInfo" }
+		},
+		{ "name": "latestOnly", "type": "boolean", "default": false }
+	]
+}

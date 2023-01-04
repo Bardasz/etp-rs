@@ -1,0 +1,19 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes",
+	"name": "AnyArray",
+	"fields":
+	[
+		{"name": "item",
+			"type": [
+				"Energistics.Etp.v12.Datatypes.ArrayOfBoolean",
+				"Energistics.Etp.v12.Datatypes.ArrayOfInt",
+				"Energistics.Etp.v12.Datatypes.ArrayOfLong",
+				"Energistics.Etp.v12.Datatypes.ArrayOfFloat",
+				"Energistics.Etp.v12.Datatypes.ArrayOfDouble",
+				"Energistics.Etp.v12.Datatypes.ArrayOfString",
+				"bytes"
+			]
+		}
+	]
+}

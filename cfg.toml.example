@@ -1,0 +1,3 @@
+[etp-rs]
+etp_user = "username"
+etp_password = "password"

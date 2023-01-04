@@ -1,0 +1,29 @@
+{
+	"type": "enum",
+	"namespace": "Energistics.Etp.v12.Datatypes",
+	"name": "AnyLogicalArrayType",
+	"symbols":
+	[
+		"arrayOfBoolean",
+		"arrayOfInt8",
+		"arrayOfUInt8",
+		"arrayOfInt16LE",
+		"arrayOfInt32LE",
+		"arrayOfInt64LE",
+		"arrayOfUInt16LE",
+		"arrayOfUInt32LE",
+		"arrayOfUInt64LE",
+		"arrayOfFloat32LE",
+		"arrayOfDouble64LE",
+		"arrayOfInt16BE",
+		"arrayOfInt32BE",
+		"arrayOfInt64BE",
+		"arrayOfUInt16BE",
+		"arrayOfUInt32BE",
+		"arrayOfUInt64BE",
+		"arrayOfFloat32BE",
+		"arrayOfDouble64BE",
+		"arrayOfString",
+		"arrayOfCustom"
+	]
+}

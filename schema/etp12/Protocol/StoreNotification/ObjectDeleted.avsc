@@ -1,0 +1,17 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.StoreNotification",
+	"name": "ObjectDeleted",
+	"protocol": "5",
+	"messageType": "3",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ "name": "uri", "type": "string" },
+		{ "name": "changeTime", "type": "long" },
+		{ "name": "requestUuid", "type": "Energistics.Etp.v12.Datatypes.Uuid" }
+	]
+}

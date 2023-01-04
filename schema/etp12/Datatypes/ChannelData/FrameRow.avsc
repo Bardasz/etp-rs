@@ -1,0 +1,16 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes.ChannelData",
+	"name": "FrameRow",
+	"fields":
+	[
+		{ 
+			"name": "indexes",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.IndexValue" }
+		},
+		{ 
+			"name": "points",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.ChannelData.FramePoint" }
+		}
+	]
+}

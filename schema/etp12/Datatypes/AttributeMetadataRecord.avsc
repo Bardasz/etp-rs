@@ -1,0 +1,18 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes",
+	"name": "AttributeMetadataRecord",
+	"fields":
+	[
+		{ "name": "attributeId", "type": "int" },
+		{ "name": "attributeName", "type": "string" },
+		{ "name": "dataKind", "type": "Energistics.Etp.v12.Datatypes.ChannelData.ChannelDataKind" },
+		{ "name": "uom", "type": "string" },
+		{ "name": "depthDatum", "type": "string" },
+		{ "name": "attributePropertyKindUri", "type": "string" },
+		{ 
+			"name": "axisVectorLengths",
+			"type": { "type": "array", "items": "int" }
+		}
+	]
+}

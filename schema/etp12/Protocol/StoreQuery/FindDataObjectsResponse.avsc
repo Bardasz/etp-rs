@@ -1,0 +1,18 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.StoreQuery",
+	"name": "FindDataObjectsResponse",
+	"protocol": "14",
+	"messageType": "2",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{
+			"name": "dataObjects",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.Object.DataObject" }, "default": []
+		},
+		{ "name": "serverSortOrder", "type": "string" }
+	]
+}

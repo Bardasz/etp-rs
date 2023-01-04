@@ -1,0 +1,12 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes",
+	"name": "MessageHeaderExtension",
+	"fields":
+	[
+		{
+			"name": "extension",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.DataValue" }, "default": {}
+		}
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"type": "enum",
+	"namespace": "Energistics.Etp.v12.Datatypes",
+	"name": "DataObjectCapabilityKind",
+	"symbols":
+	[
+		"ActiveTimeoutPeriod",
+		"MaxContainedDataObjectCount",
+		"MaxDataObjectSize",
+		"OrphanedChildrenPrunedOnDelete",
+		"SupportsGet",
+		"SupportsPut",
+		"SupportsDelete",
+		"MaxSecondaryIndexCount"
+	]
+}

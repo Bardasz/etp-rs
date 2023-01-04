@@ -1,0 +1,13 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes.ChannelData",
+	"name": "FramePoint",
+	"fields":
+	[
+		{ "name": "value", "type": "Energistics.Etp.v12.Datatypes.DataValue" },
+		{
+			"name": "valueAttributes",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.DataAttribute" }, "default": []
+		}
+	]
+}

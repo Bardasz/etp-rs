@@ -1,0 +1,18 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.GrowingObject",
+	"name": "GetPartsByRange",
+	"protocol": "6",
+	"messageType": "4",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ "name": "uri", "type": "string" },
+		{ "name": "format", "type": "string", "default": "xml" },
+		{ "name": "indexInterval", "type": "Energistics.Etp.v12.Datatypes.Object.IndexInterval" },
+		{ "name": "includeOverlappingIntervals", "type": "boolean" }
+	]
+}

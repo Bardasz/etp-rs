@@ -1,0 +1,18 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.ChannelDataLoad",
+	"name": "OpenChannels",
+	"protocol": "22",
+	"messageType": "1",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{
+			"name": "uris",
+			"type": { "type": "map", "values": "string" }
+		}
+	]
+}

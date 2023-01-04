@@ -1,0 +1,18 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.Store",
+	"name": "PutDataObjects",
+	"protocol": "4",
+	"messageType": "2",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{
+			"name": "dataObjects",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.Object.DataObject" }
+		},
+		{ "name": "pruneContainedObjects", "type": "boolean", "default": false }
+	]
+}

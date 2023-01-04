@@ -1,0 +1,19 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.Store",
+	"name": "DeleteDataObjects",
+	"protocol": "4",
+	"messageType": "3",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{
+			"name": "uris",
+			"type": { "type": "map", "values": "string" }
+		},
+		{ "name": "pruneContainedObjects", "type": "boolean", "default": false }
+	]
+}

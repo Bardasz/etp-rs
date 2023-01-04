@@ -1,0 +1,15 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.Transaction",
+	"name": "RollbackTransaction",
+	"protocol": "18",
+	"messageType": "4",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ "name": "transactionUuid", "type": "Energistics.Etp.v12.Datatypes.Uuid" }
+	]
+}

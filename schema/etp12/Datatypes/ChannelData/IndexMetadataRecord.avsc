@@ -1,0 +1,16 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes.ChannelData",
+	"name": "IndexMetadataRecord",
+	"fields":
+	[
+		{ "name": "indexKind", "type": "Energistics.Etp.v12.Datatypes.ChannelData.ChannelIndexKind", "default": "DateTime" },
+		{ "name": "interval", "type": "Energistics.Etp.v12.Datatypes.Object.IndexInterval" },
+		{ "name": "direction", "type": "Energistics.Etp.v12.Datatypes.ChannelData.IndexDirection", "default": "Increasing" },
+		{ "name": "name", "type": "string", "default": "" },
+		{ "name": "uom", "type": "string" },
+		{ "name": "depthDatum", "type": "string", "default": "" },
+		{ "name": "indexPropertyKindUri", "type": "string" },
+		{ "name": "filterable", "type": "boolean", "default": true }
+	]
+}

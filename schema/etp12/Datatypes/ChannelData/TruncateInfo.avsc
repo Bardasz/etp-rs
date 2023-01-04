@@ -1,0 +1,10 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes.ChannelData",
+	"name": "TruncateInfo",
+	"fields":
+	[
+		{ "name": "channelId", "type": "long" },
+		{ "name": "newEndIndex", "type": "Energistics.Etp.v12.Datatypes.IndexValue" }
+	]
+}

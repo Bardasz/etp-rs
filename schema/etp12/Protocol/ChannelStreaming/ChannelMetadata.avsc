@@ -1,0 +1,18 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.ChannelStreaming",
+	"name": "ChannelMetadata",
+	"protocol": "1",
+	"messageType": "1",
+	"senderRole": "producer",
+	"protocolRoles": "producer,consumer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ 
+			"name": "channels",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.ChannelData.ChannelMetadataRecord" }
+		}
+	]
+}

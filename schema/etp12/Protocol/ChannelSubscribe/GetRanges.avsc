@@ -1,0 +1,19 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.ChannelSubscribe",
+	"name": "GetRanges",
+	"protocol": "21",
+	"messageType": "9",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ "name": "requestUuid", "type": "Energistics.Etp.v12.Datatypes.Uuid" },
+		{ 
+			"name": "channelRanges",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.ChannelData.ChannelRangeInfo" }
+		}
+	]
+}

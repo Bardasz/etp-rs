@@ -1,0 +1,24 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes.Object",
+	"name": "PutResponse",
+	"fields":
+	[
+		{
+			"name": "createdContainedObjectUris",
+			"type": { "type": "array", "items": "string" }, "default": []
+		},
+		{
+			"name": "deletedContainedObjectUris",
+			"type": { "type": "array", "items": "string" }, "default": []
+		},
+		{
+			"name": "joinedContainedObjectUris",
+			"type": { "type": "array", "items": "string" }, "default": []
+		},
+		{
+			"name": "unjoinedContainedObjectUris",
+			"type": { "type": "array", "items": "string" }, "default": []
+		}
+	]
+}

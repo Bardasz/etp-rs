@@ -1,0 +1,22 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.ChannelDataFrame",
+	"name": "GetFrameMetadataResponse",
+	"protocol": "2",
+	"messageType": "2",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{ "name": "uri", "type": "string" },
+		{ 
+			"name": "indexes",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.ChannelData.IndexMetadataRecord" }
+		},
+		{ 
+			"name": "channels",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.ChannelData.FrameChannelMetadataRecord" }
+		}
+	]
+}

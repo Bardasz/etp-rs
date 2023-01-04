@@ -1,0 +1,17 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.ChannelDataFrame",
+	"name": "GetFrameResponseRows",
+	"protocol": "2",
+	"messageType": "6",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{ 
+			"name": "frame",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.ChannelData.FrameRow" }
+		}
+	]
+}

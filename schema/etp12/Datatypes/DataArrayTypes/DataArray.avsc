@@ -1,0 +1,13 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes.DataArrayTypes",
+	"name": "DataArray",
+	"fields":
+	[
+		{ 
+			"name": "dimensions",
+			"type": { "type": "array", "items": "long" }
+		},
+		{ "name": "data", "type": "Energistics.Etp.v12.Datatypes.AnyArray" }
+	]
+}

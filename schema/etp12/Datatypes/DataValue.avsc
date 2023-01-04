@@ -1,0 +1,31 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes",
+	"name": "DataValue",
+	"fields":
+	[
+		{"name": "item",
+			"type": [
+				"null",
+				"boolean",
+				"int",
+				"long",
+				"float",
+				"double",
+				"string",
+				"Energistics.Etp.v12.Datatypes.ArrayOfBoolean",
+				"Energistics.Etp.v12.Datatypes.ArrayOfNullableBoolean",
+				"Energistics.Etp.v12.Datatypes.ArrayOfInt",
+				"Energistics.Etp.v12.Datatypes.ArrayOfNullableInt",
+				"Energistics.Etp.v12.Datatypes.ArrayOfLong",
+				"Energistics.Etp.v12.Datatypes.ArrayOfNullableLong",
+				"Energistics.Etp.v12.Datatypes.ArrayOfFloat",
+				"Energistics.Etp.v12.Datatypes.ArrayOfDouble",
+				"Energistics.Etp.v12.Datatypes.ArrayOfString",
+				"Energistics.Etp.v12.Datatypes.ArrayOfBytes",
+				"bytes",
+				"Energistics.Etp.v12.Datatypes.AnySparseArray"
+			]
+		}
+	]
+}

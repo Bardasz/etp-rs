@@ -1,0 +1,17 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.Dataspace",
+	"name": "DeleteDataspacesResponse",
+	"protocol": "24",
+	"messageType": "5",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{
+			"name": "success",
+			"type": { "type": "map", "values": "string" }
+		}
+	]
+}

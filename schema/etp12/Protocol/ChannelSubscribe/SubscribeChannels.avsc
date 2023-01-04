@@ -1,0 +1,18 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.ChannelSubscribe",
+	"name": "SubscribeChannels",
+	"protocol": "21",
+	"messageType": "3",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{
+			"name": "channels",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.ChannelData.ChannelSubscribeInfo" }
+		}
+	]
+}

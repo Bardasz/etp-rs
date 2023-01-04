@@ -1,0 +1,17 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.Transaction",
+	"name": "CommitTransactionResponse",
+	"protocol": "18",
+	"messageType": "5",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ "name": "transactionUuid", "type": "Energistics.Etp.v12.Datatypes.Uuid" },
+		{ "name": "successful", "type": "boolean", "default": true },
+		{ "name": "failureReason", "type": "string", "default": "" }
+	]
+}

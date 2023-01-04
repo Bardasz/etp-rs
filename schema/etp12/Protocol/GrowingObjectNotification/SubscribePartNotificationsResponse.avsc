@@ -1,0 +1,17 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.GrowingObjectNotification",
+	"name": "SubscribePartNotificationsResponse",
+	"protocol": "7",
+	"messageType": "10",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{
+			"name": "success",
+			"type": { "type": "map", "values": "string" }
+		}
+	]
+}

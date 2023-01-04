@@ -1,0 +1,20 @@
+{
+	"type": "enum",
+	"namespace": "Energistics.Etp.v12.Datatypes.ChannelData",
+	"name": "ChannelDataKind",
+	"symbols":
+	[
+		"DateTime",
+		"ElapsedTime",
+		"MeasuredDepth",
+		"PassIndexedDepth",
+		"TrueVerticalDepth",
+		"typeBoolean",
+		"typeInt",
+		"typeLong",
+		"typeFloat",
+		"typeDouble",
+		"typeString",
+		"typeBytes"
+	]
+}

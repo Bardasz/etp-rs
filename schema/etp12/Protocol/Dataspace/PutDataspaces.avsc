@@ -1,0 +1,18 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.Dataspace",
+	"name": "PutDataspaces",
+	"protocol": "24",
+	"messageType": "3",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{
+			"name": "dataspaces",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.Object.Dataspace" }
+		}
+	]
+}

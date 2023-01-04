@@ -1,0 +1,16 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.GrowingObjectNotification",
+	"name": "PartSubscriptionEnded",
+	"protocol": "7",
+	"messageType": "8",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ "name": "reason", "type": "string" },
+		{ "name": "requestUuid", "type": "Energistics.Etp.v12.Datatypes.Uuid" }
+	]
+}

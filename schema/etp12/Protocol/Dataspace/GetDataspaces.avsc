@@ -1,0 +1,15 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.Dataspace",
+	"name": "GetDataspaces",
+	"protocol": "24",
+	"messageType": "1",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ "name": "storeLastWriteFilter", "type": ["null", "long"] }
+	]
+}

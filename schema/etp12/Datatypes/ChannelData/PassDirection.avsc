@@ -1,0 +1,11 @@
+{
+	"type": "enum",
+	"namespace": "Energistics.Etp.v12.Datatypes.ChannelData",
+	"name": "PassDirection",
+	"symbols":
+	[
+		"Up",
+		"HoldingSteady",
+		"Down"
+	]
+}

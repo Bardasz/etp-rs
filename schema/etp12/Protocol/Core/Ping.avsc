@@ -1,0 +1,15 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.Core",
+	"name": "Ping",
+	"protocol": "0",
+	"messageType": "8",
+	"senderRole": "client,server",
+	"protocolRoles": "client, server",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ "name": "currentDateTime", "type": "long" }
+	]
+}

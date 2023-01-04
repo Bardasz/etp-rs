@@ -1,0 +1,16 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes.Object",
+	"name": "Dataspace",
+	"fields":
+	[
+		{ "name": "uri", "type": "string" },
+		{ "name": "path", "type": "string", "default": "" },
+		{ "name": "storeLastWrite", "type": "long" },
+		{ "name": "storeCreated", "type": "long" },
+		{
+			"name": "customData",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.DataValue" }, "default": {}
+		}
+	]
+}

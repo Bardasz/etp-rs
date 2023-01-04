@@ -1,0 +1,17 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.ChannelDataLoad",
+	"name": "OpenChannelsResponse",
+	"protocol": "22",
+	"messageType": "2",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{
+			"name": "channels",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.ChannelData.OpenChannelInfo" }, "default": {}
+		}
+	]
+}

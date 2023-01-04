@@ -1,0 +1,18 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.Core",
+	"name": "ProtocolException",
+	"protocol": "0",
+	"messageType": "1000",
+	"senderRole": "*",
+	"protocolRoles": "client, server",
+	"multipartFlag": true,
+	"fields":
+	[
+		{ "name": "error", "type": ["null", "Energistics.Etp.v12.Datatypes.ErrorInfo"] },
+		{
+			"name": "errors",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.ErrorInfo" }, "default": {}
+		}
+	]
+}

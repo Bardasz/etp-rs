@@ -1,0 +1,18 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.Dataspace",
+	"name": "DeleteDataspaces",
+	"protocol": "24",
+	"messageType": "4",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{
+			"name": "uris",
+			"type": { "type": "map", "values": "string" }
+		}
+	]
+}

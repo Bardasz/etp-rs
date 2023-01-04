@@ -1,0 +1,10 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes",
+	"name": "ErrorInfo",
+	"fields":
+	[
+		{ "name": "message", "type": "string" },
+		{ "name": "code", "type": "int" }
+	]
+}

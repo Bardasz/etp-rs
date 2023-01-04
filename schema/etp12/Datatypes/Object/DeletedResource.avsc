@@ -1,0 +1,14 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes.Object",
+	"name": "DeletedResource",
+	"fields":
+	[
+		{ "name": "uri", "type": "string" },
+		{ "name": "deletedTime", "type": "long" },
+		{
+			"name": "customData",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.DataValue" }, "default": {}
+		}
+	]
+}

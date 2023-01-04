@@ -1,0 +1,22 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.ChannelDataFrame",
+	"name": "GetFrame",
+	"protocol": "2",
+	"messageType": "3",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ "name": "uri", "type": "string" },
+		{ "name": "includeAllChannelSecondaryIndexes", "type": "boolean", "default": false },
+		{ "name": "requestedInterval", "type": "Energistics.Etp.v12.Datatypes.Object.IndexInterval" },
+		{ "name": "requestUuid", "type": "Energistics.Etp.v12.Datatypes.Uuid" },
+		{
+			"name": "requestedSecondaryIntervals",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.Object.IndexInterval" }, "default": []
+		}
+	]
+}

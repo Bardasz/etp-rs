@@ -1,0 +1,25 @@
+{
+	"type": "enum",
+	"namespace": "Energistics.Etp.v12.Datatypes",
+	"name": "EndpointCapabilityKind",
+	"symbols":
+	[
+		"ActiveTimeoutPeriod",
+		"AuthorizationDetails",
+		"ChangePropagationPeriod",
+		"ChangeRetentionPeriod",
+		"MaxConcurrentMultipart",
+		"MaxDataObjectSize",
+		"MaxPartSize",
+		"MaxSessionClientCount",
+		"MaxSessionGlobalCount",
+		"MaxWebSocketFramePayloadSize",
+		"MaxWebSocketMessagePayloadSize",
+		"MultipartMessageTimeoutPeriod",
+		"ResponseTimeoutPeriod",
+		"RequestSessionTimeoutPeriod",
+		"SessionEstablishmentTimeoutPeriod",
+		"SupportsAlternateRequestUris",
+		"SupportsMessageHeaderExtensions"
+	]
+}

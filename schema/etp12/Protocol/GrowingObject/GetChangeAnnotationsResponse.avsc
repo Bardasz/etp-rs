@@ -1,0 +1,17 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.GrowingObject",
+	"name": "GetChangeAnnotationsResponse_GO",
+	"protocol": "6",
+	"messageType": "20",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{
+			"name": "changes",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.Object.ChangeResponseInfo" }
+		}
+	]
+}

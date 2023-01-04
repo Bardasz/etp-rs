@@ -1,0 +1,17 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.Dataspace",
+	"name": "GetDataspacesResponse",
+	"protocol": "24",
+	"messageType": "2",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{
+			"name": "dataspaces",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.Object.Dataspace" }, "default": []
+		}
+	]
+}

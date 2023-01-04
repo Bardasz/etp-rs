@@ -1,0 +1,10 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes.DataArrayTypes",
+	"name": "DataArrayIdentifier",
+	"fields":
+	[
+		{ "name": "uri", "type": "string" },
+		{ "name": "pathInResource", "type": "string" }
+	]
+}

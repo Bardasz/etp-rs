@@ -1,0 +1,20 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.Discovery",
+	"name": "GetDeletedResources",
+	"protocol": "3",
+	"messageType": "5",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ "name": "dataspaceUri", "type": "string" },
+		{ "name": "deleteTimeFilter", "type": ["null", "long"] },
+		{
+			"name": "dataObjectTypes",
+			"type": { "type": "array", "items": "string" }, "default": []
+		}
+	]
+}

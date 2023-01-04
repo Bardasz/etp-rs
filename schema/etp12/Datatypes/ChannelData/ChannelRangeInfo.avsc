@@ -1,0 +1,17 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes.ChannelData",
+	"name": "ChannelRangeInfo",
+	"fields":
+	[
+		{ 
+			"name": "channelIds",
+			"type": { "type": "array", "items": "long" }
+		},
+		{ "name": "interval", "type": "Energistics.Etp.v12.Datatypes.Object.IndexInterval" },
+		{
+			"name": "secondaryIntervals",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.Object.IndexInterval" }, "default": []
+		}
+	]
+}

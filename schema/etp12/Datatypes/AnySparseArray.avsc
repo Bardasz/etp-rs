@@ -1,0 +1,12 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes",
+	"name": "AnySparseArray",
+	"fields":
+	[
+		{ 
+			"name": "slices",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.AnySubarray" }
+		}
+	]
+}

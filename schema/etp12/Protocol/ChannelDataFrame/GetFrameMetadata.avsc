@@ -1,0 +1,16 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.ChannelDataFrame",
+	"name": "GetFrameMetadata",
+	"protocol": "2",
+	"messageType": "1",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ "name": "uri", "type": "string" },
+		{ "name": "includeAllChannelSecondaryIndexes", "type": "boolean", "default": false }
+	]
+}

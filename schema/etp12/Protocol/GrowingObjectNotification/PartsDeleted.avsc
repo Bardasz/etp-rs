@@ -1,0 +1,21 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.GrowingObjectNotification",
+	"name": "PartsDeleted",
+	"protocol": "7",
+	"messageType": "3",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ "name": "uri", "type": "string" },
+		{ "name": "requestUuid", "type": "Energistics.Etp.v12.Datatypes.Uuid" },
+		{ "name": "changeTime", "type": "long" },
+		{ 
+			"name": "uids",
+			"type": { "type": "array", "items": "string" }
+		}
+	]
+}

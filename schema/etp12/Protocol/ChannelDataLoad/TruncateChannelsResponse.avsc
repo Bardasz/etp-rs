@@ -1,0 +1,17 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.ChannelDataLoad",
+	"name": "TruncateChannelsResponse",
+	"protocol": "22",
+	"messageType": "10",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{
+			"name": "channelsTruncatedTime",
+			"type": { "type": "map", "values": "long" }
+		}
+	]
+}

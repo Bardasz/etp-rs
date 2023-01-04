@@ -1,0 +1,11 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes.ChannelData",
+	"name": "PassIndexedDepth",
+	"fields":
+	[
+		{ "name": "pass", "type": "long" },
+		{ "name": "direction", "type": "Energistics.Etp.v12.Datatypes.ChannelData.PassDirection" },
+		{ "name": "depth", "type": "double" }
+	]
+}

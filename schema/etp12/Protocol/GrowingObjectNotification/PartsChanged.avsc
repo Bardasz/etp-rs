@@ -1,0 +1,23 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.GrowingObjectNotification",
+	"name": "PartsChanged",
+	"protocol": "7",
+	"messageType": "2",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ "name": "uri", "type": "string" },
+		{ "name": "requestUuid", "type": "Energistics.Etp.v12.Datatypes.Uuid" },
+		{ "name": "changeKind", "type": "Energistics.Etp.v12.Datatypes.Object.ObjectChangeKind" },
+		{ "name": "changeTime", "type": "long" },
+		{ "name": "format", "type": "string", "default": "" },
+		{ 
+			"name": "parts",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.Object.ObjectPart" }
+		}
+	]
+}

@@ -1,0 +1,33 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes.ChannelData",
+	"name": "ChannelMetadataRecord",
+	"fields":
+	[
+		{ "name": "uri", "type": "string" },
+		{ "name": "id", "type": "long" },
+		{ 
+			"name": "indexes",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.ChannelData.IndexMetadataRecord" }
+		},
+		{ "name": "channelName", "type": "string" },
+		{ "name": "dataKind", "type": "Energistics.Etp.v12.Datatypes.ChannelData.ChannelDataKind" },
+		{ "name": "uom", "type": "string" },
+		{ "name": "depthDatum", "type": "string" },
+		{ "name": "channelClassUri", "type": "string" },
+		{ "name": "status", "type": "Energistics.Etp.v12.Datatypes.Object.ActiveStatusKind" },
+		{ "name": "source", "type": "string" },
+		{ 
+			"name": "axisVectorLengths",
+			"type": { "type": "array", "items": "int" }
+		},
+		{
+			"name": "attributeMetadata",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.AttributeMetadataRecord" }, "default": []
+		},
+		{
+			"name": "customData",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.DataValue" }, "default": {}
+		}
+	]
+}

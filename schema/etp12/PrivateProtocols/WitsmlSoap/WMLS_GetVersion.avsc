@@ -1,0 +1,15 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.PrivateProtocols.WitsmlSoap",
+	"name": "WMLS_GetVersion",
+	"protocol": "2100",
+	"messageType": "11",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+	
+	]
+}

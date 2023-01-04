@@ -1,0 +1,23 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.GrowingObjectNotification",
+	"name": "PartsReplacedByRange",
+	"protocol": "7",
+	"messageType": "6",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{ "name": "uri", "type": "string" },
+		{ "name": "requestUuid", "type": "Energistics.Etp.v12.Datatypes.Uuid" },
+		{ "name": "changeTime", "type": "long" },
+		{ "name": "deletedInterval", "type": "Energistics.Etp.v12.Datatypes.Object.IndexInterval" },
+		{ "name": "includeOverlappingIntervals", "type": "boolean" },
+		{ "name": "format", "type": "string", "default": "" },
+		{ 
+			"name": "parts",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.Object.ObjectPart" }
+		}
+	]
+}

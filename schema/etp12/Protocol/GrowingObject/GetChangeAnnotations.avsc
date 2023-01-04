@@ -1,0 +1,20 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.GrowingObject",
+	"name": "GetChangeAnnotations_GO",
+	"protocol": "6",
+	"messageType": "19",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ "name": "sinceChangeTime", "type": "long" },
+		{
+			"name": "uris",
+			"type": { "type": "map", "values": "string" }
+		},
+		{ "name": "latestOnly", "type": "boolean", "default": false }
+	]
+}

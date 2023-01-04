@@ -1,0 +1,19 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.ChannelSubscribe",
+	"name": "ChannelsTruncated",
+	"protocol": "21",
+	"messageType": "13",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ 
+			"name": "channels",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.ChannelData.TruncateInfo" }
+		},
+		{ "name": "changeTime", "type": "long" }
+	]
+}

@@ -1,0 +1,21 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.ChannelDataFrame",
+	"name": "GetFrameResponseHeader",
+	"protocol": "2",
+	"messageType": "4",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{ 
+			"name": "channelUris",
+			"type": { "type": "array", "items": "string" }
+		},
+		{ 
+			"name": "indexes",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.ChannelData.IndexMetadataRecord" }
+		}
+	]
+}

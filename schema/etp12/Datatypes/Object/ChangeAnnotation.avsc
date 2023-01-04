@@ -1,0 +1,10 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes.Object",
+	"name": "ChangeAnnotation",
+	"fields":
+	[
+		{ "name": "changeTime", "type": "long" },
+		{ "name": "interval", "type": "Energistics.Etp.v12.Datatypes.Object.IndexInterval" }
+	]
+}

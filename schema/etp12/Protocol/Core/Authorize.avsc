@@ -1,0 +1,19 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.Core",
+	"name": "Authorize",
+	"protocol": "0",
+	"messageType": "6",
+	"senderRole": "client,server",
+	"protocolRoles": "client, server",
+	"multipartFlag": false,
+  
+	"fields":
+	[
+		{ "name": "authorization", "type": "string" },
+		{
+			"name": "supplementalAuthorization",
+			"type": { "type": "map", "values": "string" }
+		}
+	]
+}

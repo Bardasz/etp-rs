@@ -1,0 +1,15 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes.Object",
+	"name": "Edge",
+	"fields":
+	[
+		{ "name": "sourceUri", "type": "string" },
+		{ "name": "targetUri", "type": "string" },
+		{ "name": "relationshipKind", "type": "Energistics.Etp.v12.Datatypes.Object.RelationshipKind" },
+		{
+			"name": "customData",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.DataValue" }, "default": {}
+		}
+	]
+}

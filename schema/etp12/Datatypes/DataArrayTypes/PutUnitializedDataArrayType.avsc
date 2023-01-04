@@ -1,0 +1,10 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes.DataArrayTypes",
+	"name": "PutUninitializedDataArrayType",
+	"fields":
+	[
+		{ "name": "uid", "type": "Energistics.Etp.v12.Datatypes.DataArrayTypes.DataArrayIdentifier" },
+		{ "name": "metadata", "type": "Energistics.Etp.v12.Datatypes.DataArrayTypes.DataArrayMetadata" }
+	]
+}

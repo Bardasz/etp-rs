@@ -1,0 +1,17 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.ChannelSubscribe",
+	"name": "GetChannelMetadataResponse",
+	"protocol": "21",
+	"messageType": "2",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{
+			"name": "metadata",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.ChannelData.ChannelMetadataRecord" }, "default": {}
+		}
+	]
+}

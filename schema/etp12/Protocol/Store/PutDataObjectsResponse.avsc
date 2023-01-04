@@ -1,0 +1,17 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.Store",
+	"name": "PutDataObjectsResponse",
+	"protocol": "4",
+	"messageType": "9",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{
+			"name": "success",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.Object.PutResponse" }
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.GrowingObject",
+	"name": "GetPartsMetadataResponse",
+	"protocol": "6",
+	"messageType": "9",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{
+			"name": "metadata",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.Object.PartsMetadataInfo" }
+		}
+	]
+}

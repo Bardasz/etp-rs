@@ -1,0 +1,12 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes",
+	"name": "Version",
+	"fields":
+	[
+		{ "name": "major", "type": "int", "default": 0 },
+		{ "name": "minor", "type": "int", "default": 0 },
+		{ "name": "revision", "type": "int", "default": 0 },
+		{ "name": "patch", "type": "int", "default": 0 }
+	]
+}

@@ -1,0 +1,21 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.GrowingObject",
+	"name": "ReplacePartsByRange",
+	"protocol": "6",
+	"messageType": "7",
+	"senderRole": "customer",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{ "name": "uri", "type": "string" },
+		{ "name": "deleteInterval", "type": "Energistics.Etp.v12.Datatypes.Object.IndexInterval" },
+		{ "name": "includeOverlappingIntervals", "type": "boolean" },
+		{ "name": "format", "type": "string", "default": "xml" },
+		{ 
+			"name": "parts",
+			"type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.Object.ObjectPart" }
+		}
+	]
+}

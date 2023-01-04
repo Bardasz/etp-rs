@@ -1,0 +1,17 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Protocol.DataArray",
+	"name": "GetDataArraysResponse",
+	"protocol": "9",
+	"messageType": "1",
+	"senderRole": "store",
+	"protocolRoles": "store,customer",
+	"multipartFlag": true,
+	"fields":
+	[
+		{
+			"name": "dataArrays",
+			"type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.DataArrayTypes.DataArray" }, "default": {}
+		}
+	]
+}

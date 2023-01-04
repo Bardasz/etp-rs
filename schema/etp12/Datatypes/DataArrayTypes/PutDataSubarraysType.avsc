@@ -1,0 +1,18 @@
+{
+	"type": "record",
+	"namespace": "Energistics.Etp.v12.Datatypes.DataArrayTypes",
+	"name": "PutDataSubarraysType",
+	"fields":
+	[
+		{ "name": "uid", "type": "Energistics.Etp.v12.Datatypes.DataArrayTypes.DataArrayIdentifier" },
+		{ "name": "data", "type": "Energistics.Etp.v12.Datatypes.AnyArray" },
+		{ 
+			"name": "starts",
+			"type": { "type": "array", "items": "long" }
+		},
+		{ 
+			"name": "counts",
+			"type": { "type": "array", "items": "long" }
+		}
+	]
+}
