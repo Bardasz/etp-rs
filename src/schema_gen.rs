@@ -34,7 +34,8 @@
 // 5. Rename UnionArrayOfBooleanArrayOfIntArrayOfLongArrayOfFloatArrayOfDoubleArrayOfStringBytes to AnyArrayUnion
 // 6. Put #[serde(with = "serde_bytes")]  above EVERY use of Uuid   (search for ': Uuid,' some 27 entries.)
 // 7. Rename 'Self' to 'Self_'  in ContextScopeKind   (Self is a reserved word)
-// 8. Update Protocol enum with absolute protocol numbers. (See struct below)
+// 8. Remove Types ChunkSq and ChunkSn  (Just use Schema/Type 'Chunk' for all 3 protocol uses)
+// 9. Update Protocol enum with absolute protocol numbers. (See struct below)
 
 // pub enum Protocol {
 //     Core = 0,
@@ -251,16 +252,6 @@ fn default_finddataobjects_format() -> String {
 }
 
 #[derive(Debug, PartialEq, Eq, Clone, serde::Deserialize, serde::Serialize)]
-pub struct ChunkSq {
-    #[serde(rename = "blobId")]
-    #[serde(with = "serde_bytes")]
-    pub blob_id: Uuid,
-    #[serde(with = "serde_bytes")]
-    pub data: Vec<u8>,
-    pub r#final: bool,
-}
-
-#[derive(Debug, PartialEq, Eq, Clone, serde::Deserialize, serde::Serialize)]
 pub struct UnsubscribeNotifications {
     #[serde(rename = "requestUuid")]
     #[serde(with = "serde_bytes")]
@@ -328,16 +319,6 @@ pub struct ObjectAccessRevoked {
     #[serde(rename = "requestUuid")]
     #[serde(with = "serde_bytes")]
     pub request_uuid: Uuid,
-}
-
-#[derive(Debug, PartialEq, Eq, Clone, serde::Deserialize, serde::Serialize)]
-pub struct ChunkSn {
-    #[serde(rename = "blobId")]
-    #[serde(with = "serde_bytes")]
-    pub blob_id: Uuid,
-    #[serde(with = "serde_bytes")]
-    pub data: Vec<u8>,
-    pub r#final: bool,
 }
 
 #[derive(Debug, PartialEq, Eq, Clone, serde::Deserialize, serde::Serialize)]

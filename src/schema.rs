@@ -471,14 +471,14 @@ pub const STORENOTIFICATION_OBJECTACCESSREVOKED: (usize, usize) = (5, 5);
 pub const STORENOTIFICATION_SUBSCRIBENOTIFICATIONS: (usize, usize) = (5, 6);
 pub const STORENOTIFICATION_SUBSCRIPTIONENDED: (usize, usize) = (5, 7);
 pub const STORENOTIFICATION_UNSOLICITEDSTORENOTIFICATIONS: (usize, usize) = (5, 8);
-pub const STORENOTIFICATION_CHUNK_SN: (usize, usize) = (5, 9);
+pub const STORENOTIFICATION_CHUNK: (usize, usize) = (5, 9);
 pub const STORENOTIFICATION_SUBSCRIBENOTIFICATIONSRESPONSE: (usize, usize) = (5, 10);
 pub const STORENOTIFICATION_OBJECTACTIVESTATUSCHANGED: (usize, usize) = (5, 11);
 
 // Store Query
 pub const STOREQUERY_FINDDATAOBJECTS: (usize, usize) = (14, 1);
 pub const STOREQUERY_FINDDATAOBJECTSRESPONSE: (usize, usize) = (14, 2);
-pub const STOREQUERY_CHUNK_SQ: (usize, usize) = (14, 3);
+pub const STOREQUERY_CHUNK: (usize, usize) = (14, 3);
 
 // Supported Types
 pub const SUPPORTEDTYPES_GETSUPPORTEDTYPES: (usize, usize) = (25, 1);
@@ -646,7 +646,7 @@ static ETP_SCHEMA_EMBED: [&str; 207] = [
     // ------------------------------------------------------
     // 5 - StoreNotification
     // ------------------------------------------------------
-    r##"{"type": "record","namespace": "Energistics.Etp.v12.Protocol.StoreNotification","name": "Chunk_SN","protocol": "5","messageType": "9","senderRole": "store","protocolRoles": "store,customer","multipartFlag": true,"fields":[{ "name": "blobId", "type": "Energistics.Etp.v12.Datatypes.Uuid" },{ "name": "data", "type": "bytes" },{ "name": "final", "type": "boolean" }]}"##,
+    r##"{"type": "record","namespace": "Energistics.Etp.v12.Protocol.StoreNotification","name": "Chunk","protocol": "5","messageType": "9","senderRole": "store","protocolRoles": "store,customer","multipartFlag": true,"fields":[{ "name": "blobId", "type": "Energistics.Etp.v12.Datatypes.Uuid" },{ "name": "data", "type": "bytes" },{ "name": "final", "type": "boolean" }]}"##,
     r##"{"type": "record","namespace": "Energistics.Etp.v12.Protocol.StoreNotification","name": "ObjectAccessRevoked","protocol": "5","messageType": "5","senderRole": "store","protocolRoles": "store,customer","multipartFlag": false,  "fields":[{ "name": "uri", "type": "string" },{ "name": "changeTime", "type": "long" },{ "name": "requestUuid", "type": "Energistics.Etp.v12.Datatypes.Uuid" }]}"##,
     r##"{"type": "record","namespace": "Energistics.Etp.v12.Protocol.StoreNotification","name": "ObjectActiveStatusChanged","protocol": "5","messageType": "11","senderRole": "store","protocolRoles": "store,customer","multipartFlag": false,  "fields":[{ "name": "activeStatus", "type": "Energistics.Etp.v12.Datatypes.Object.ActiveStatusKind" },{ "name": "changeTime", "type": "long" },{ "name": "resource", "type": "Energistics.Etp.v12.Datatypes.Object.Resource" },{ "name": "requestUuid", "type": "Energistics.Etp.v12.Datatypes.Uuid" }]}"##,
     r##"{"type": "record","namespace": "Energistics.Etp.v12.Protocol.StoreNotification","name": "ObjectChanged","protocol": "5","messageType": "2","senderRole": "store","protocolRoles": "store,customer","multipartFlag": true,"fields":[{ "name": "change", "type": "Energistics.Etp.v12.Datatypes.Object.ObjectChange" },{ "name": "requestUuid", "type": "Energistics.Etp.v12.Datatypes.Uuid" }]}"##,
@@ -710,7 +710,7 @@ static ETP_SCHEMA_EMBED: [&str; 207] = [
     // ------------------------------------------------------
     // 14 - StoreQuery
     // ------------------------------------------------------
-    r##"{"type": "record","namespace": "Energistics.Etp.v12.Protocol.StoreQuery","name": "Chunk_SQ","protocol": "14","messageType": "3","senderRole": "store","protocolRoles": "store,customer","multipartFlag": true,"fields":[{ "name": "blobId", "type": "Energistics.Etp.v12.Datatypes.Uuid" },{ "name": "data", "type": "bytes" },{ "name": "final", "type": "boolean" }]}"##,
+    r##"{"type": "record","namespace": "Energistics.Etp.v12.Protocol.StoreQuery","name": "Chunk","protocol": "14","messageType": "3","senderRole": "store","protocolRoles": "store,customer","multipartFlag": true,"fields":[{ "name": "blobId", "type": "Energistics.Etp.v12.Datatypes.Uuid" },{ "name": "data", "type": "bytes" },{ "name": "final", "type": "boolean" }]}"##,
     r##"{"type": "record","namespace": "Energistics.Etp.v12.Protocol.StoreQuery","name": "FindDataObjectsResponse","protocol": "14","messageType": "2","senderRole": "store","protocolRoles": "store,customer","multipartFlag": true,"fields":[{"name": "dataObjects","type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.Object.DataObject" }, "default": []},{ "name": "serverSortOrder", "type": "string" }]}"##,
     r##"{"type": "record","namespace": "Energistics.Etp.v12.Protocol.StoreQuery","name": "FindDataObjects","protocol": "14","messageType": "1","senderRole": "customer","protocolRoles": "store,customer","multipartFlag": false,  "fields":[{ "name": "context", "type": "Energistics.Etp.v12.Datatypes.Object.ContextInfo" },{ "name": "scope", "type": "Energistics.Etp.v12.Datatypes.Object.ContextScopeKind" },{ "name": "storeLastWriteFilter", "type": ["null", "long"] },{ "name": "activeStatusFilter", "type": ["null", "Energistics.Etp.v12.Datatypes.Object.ActiveStatusKind"] },{ "name": "format", "type": "string", "default": "xml" }]}"##,
     // ------------------------------------------------------
