@@ -34,8 +34,9 @@
 // 5. Rename UnionArrayOfBooleanArrayOfIntArrayOfLongArrayOfFloatArrayOfDoubleArrayOfStringBytes to AnyArrayUnion
 // 6. Put #[serde(with = "serde_bytes")]  above EVERY use of Uuid   (search for ': Uuid,' some 27 entries.)
 // 7. Rename 'Self' to 'Self_'  in ContextScopeKind   (Self is a reserved word)
-// 8. Remove Types ChunkSq and ChunkSn  (Just use Schema/Type 'Chunk' for all 3 protocol uses)
-// 9. Update Protocol enum with absolute protocol numbers. (See struct below)
+// 8. Remove redundant types ChunkSq and ChunkSn  (Just use Schema/Type 'Chunk' for all 3 protocol uses)
+// 9. Remove redundant types ChannelDataCs and ChannelDataCdl (Just use Schema/Type 'ChannelData' for all 3 protocol uses)
+// 10. Update Protocol enum with absolute protocol numbers. (See struct below)
 
 // pub enum Protocol {
 //     Core = 0,
@@ -1240,11 +1241,6 @@ pub struct ChannelMetadata {
     pub channels: Vec<ChannelMetadataRecord>,
 }
 
-#[derive(Debug, PartialEq, Clone, serde::Deserialize, serde::Serialize)]
-pub struct ChannelDataCs {
-    pub data: Vec<DataItem>,
-}
-
 #[derive(Debug, PartialEq, Eq, Clone, serde::Deserialize, serde::Serialize)]
 pub struct TruncateChannelsResponse {
     #[serde(rename = "channelsTruncatedTime")]
@@ -1304,11 +1300,6 @@ pub struct CloseChannels {
 pub struct ChannelsClosed {
     pub reason: String,
     pub id: ::std::collections::HashMap<String, i64>,
-}
-
-#[derive(Debug, PartialEq, Clone, serde::Deserialize, serde::Serialize)]
-pub struct ChannelDataCdl {
-    pub data: Vec<DataItem>,
 }
 
 #[derive(Debug, PartialEq, Clone, serde::Deserialize, serde::Serialize)]

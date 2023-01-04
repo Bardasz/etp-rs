@@ -256,7 +256,7 @@ fn test_roundtrip_channeldata() {
     //     }],
     // };
 
-    let cs = ChannelDataCdl {
+    let cs = ChannelData {
         data: vec![DataItem {
             channel_id: 1,
             indexes: Vec::new(),
@@ -339,7 +339,7 @@ pub const ETP11VERSION: Version = Version {
 
 // Channel Streaming
 pub const CHANNELSTREAMING_CHANNELMETADATA: (usize, usize) = (1, 1);
-pub const CHANNELSTREAMING_CHANNELDATA_CS: (usize, usize) = (1, 2);
+pub const CHANNELSTREAMING_CHANNELDATA: (usize, usize) = (1, 2);
 pub const CHANNELSTREAMING_TRUNCATECHANNELS_CS: (usize, usize) = (1, 5);
 
 // Channel Data Frame
@@ -354,7 +354,7 @@ pub const CHANNELDATAFRAME_GETFRAMERESPONSEROWS: (usize, usize) = (2, 6);
 pub const CHANNELDATALOAD_OPENCHANNELS: (usize, usize) = (22, 1);
 pub const CHANNELDATALOAD_OPENCHANNELSRESPONSE: (usize, usize) = (22, 2);
 pub const CHANNELDATALOAD_CLOSECHANNELS: (usize, usize) = (22, 3);
-pub const CHANNELDATALOAD_CHANNELDATA_CDL: (usize, usize) = (22, 4);
+pub const CHANNELDATALOAD_CHANNELDATA: (usize, usize) = (22, 4);
 pub const CHANNELDATALOAD_REPLACERANGE: (usize, usize) = (22, 6);
 pub const CHANNELDATALOAD_CHANNELSCLOSED: (usize, usize) = (22, 7);
 pub const CHANNELDATALOAD_REPLACERANGERESPONSE: (usize, usize) = (22, 8);
@@ -615,7 +615,7 @@ static ETP_SCHEMA_EMBED: [&str; 207] = [
     // ------------------------------------------------------
     r##"{"type": "record","namespace": "Energistics.Etp.v12.Protocol.ChannelStreaming","name": "TruncateChannels_CS","protocol": "1","messageType": "5","senderRole": "producer","protocolRoles": "producer,consumer","multipartFlag": false,  "fields":[{ "name": "channels","type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.ChannelData.TruncateInfo" }}]}"##,
     r##"{"type": "record","namespace": "Energistics.Etp.v12.Protocol.ChannelStreaming","name": "ChannelMetadata","protocol": "1","messageType": "1","senderRole": "producer","protocolRoles": "producer,consumer","multipartFlag": false,  "fields":[{ "name": "channels","type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.ChannelData.ChannelMetadataRecord" }}]}"##,
-    r##"{"type": "record","namespace": "Energistics.Etp.v12.Protocol.ChannelStreaming","name": "ChannelData_CS","protocol": "1","messageType": "2","senderRole": "producer","protocolRoles": "producer,consumer","multipartFlag": false,  "fields":[{ "name": "data","type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.ChannelData.DataItem" }}]}"##,
+    r##"{"type": "record","namespace": "Energistics.Etp.v12.Protocol.ChannelStreaming","name": "ChannelData","protocol": "1","messageType": "2","senderRole": "producer","protocolRoles": "producer,consumer","multipartFlag": false,  "fields":[{ "name": "data","type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.ChannelData.DataItem" }}]}"##,
     // ------------------------------------------------------
     // 2 - ChannelDataFrame
     // ------------------------------------------------------
@@ -750,7 +750,7 @@ static ETP_SCHEMA_EMBED: [&str; 207] = [
     r##"{"type": "record","namespace": "Energistics.Etp.v12.Protocol.ChannelDataLoad","name": "ChannelsClosed","protocol": "22","messageType": "7","senderRole": "store","protocolRoles": "store,customer","multipartFlag": true,"fields":[{ "name": "reason", "type": "string" },{"name": "id","type": { "type": "map", "values": "long" }}]}"##,
     r##"{"type": "record","namespace": "Energistics.Etp.v12.Protocol.ChannelDataLoad","name": "TruncateChannels","protocol": "22","messageType": "9","senderRole": "customer","protocolRoles": "store,customer","multipartFlag": false,  "fields":[{"name": "channels","type": { "type": "map", "values": "Energistics.Etp.v12.Datatypes.ChannelData.TruncateInfo" }}]}"##,
     r##"{"type": "record","namespace": "Energistics.Etp.v12.Protocol.ChannelDataLoad","name": "ReplaceRange","protocol": "22","messageType": "6","senderRole": "customer","protocolRoles": "store,customer","multipartFlag": true,"fields":[{ "name": "changedInterval", "type": "Energistics.Etp.v12.Datatypes.Object.IndexInterval" },{ "name": "channelIds","type": { "type": "array", "items": "long" }},{ "name": "data","type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.ChannelData.DataItem" }}]}"##,
-    r##"{"type": "record","namespace": "Energistics.Etp.v12.Protocol.ChannelDataLoad","name": "ChannelData_CDL","protocol": "22","messageType": "4","senderRole": "customer","protocolRoles": "store,customer","multipartFlag": false,  "fields":[{ "name": "data","type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.ChannelData.DataItem" }}]}"##,
+    r##"{"type": "record","namespace": "Energistics.Etp.v12.Protocol.ChannelDataLoad","name": "ChannelData","protocol": "22","messageType": "4","senderRole": "customer","protocolRoles": "store,customer","multipartFlag": false,  "fields":[{ "name": "data","type": { "type": "array", "items": "Energistics.Etp.v12.Datatypes.ChannelData.DataItem" }}]}"##,
     r##"{"type": "record","namespace": "Energistics.Etp.v12.Protocol.ChannelDataLoad","name": "OpenChannels","protocol": "22","messageType": "1","senderRole": "customer","protocolRoles": "store,customer","multipartFlag": false,  "fields":[{"name": "uris","type": { "type": "map", "values": "string" }}]}"##,
     r##"{"type": "record","namespace": "Energistics.Etp.v12.Protocol.ChannelDataLoad","name": "ReplaceRangeResponse","protocol": "22","messageType": "8","senderRole": "store","protocolRoles": "store,customer","multipartFlag": false,  "fields":[{ "name": "channelChangeTime", "type": "long" }]}"##,
     r##"{"type": "record","namespace": "Energistics.Etp.v12.Protocol.ChannelDataLoad","name": "TruncateChannelsResponse","protocol": "22","messageType": "10","senderRole": "store","protocolRoles": "store,customer","multipartFlag": true,"fields":[{"name": "channelsTruncatedTime","type": { "type": "map", "values": "long" }}]}"##,
