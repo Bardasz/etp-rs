@@ -36,6 +36,12 @@ pub enum Error {
 
     #[error("ProtocolException: {0}, {1}")]
     ProtocolException(i32, String),
+
+    #[error("URL Parse Error: {0}")]
+    ParseError(url::ParseError),
+
+    #[error("{0}")]
+    Simple(String),
 }
 
 impl From<apache_avro::Error> for Error {
@@ -53,5 +59,11 @@ impl From<std::io::Error> for Error {
 impl From<tungstenite::Error> for Error {
     fn from(err: tungstenite::Error) -> Self {
         Error::WSError(err)
+    }
+}
+
+impl From<url::ParseError> for Error {
+    fn from(err: url::ParseError) -> Self {
+        Error::ParseError(err)
     }
 }

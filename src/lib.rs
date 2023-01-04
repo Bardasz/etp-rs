@@ -20,9 +20,9 @@
 //
 // Author: Mark Farnan
 
-//#![allow(dead_code)]
-//#![allow(unused_variables)]
-//#![allow(unused_imports)]
+#![allow(dead_code)]
+#![allow(unused_variables)]
+#![allow(unused_imports)]
 
 pub mod error;
 pub mod headerflags;
@@ -39,10 +39,12 @@ use http_auth_basic::Credentials;
 
 #[allow(unused_imports)]
 use log::{info, trace, warn};
-
 use session::Session;
-
 use tungstenite::{connect, handshake::client::generate_key, http::Request};
+use url::Url;
+
+use bytes::{Buf, BufMut, Bytes, BytesMut};
+use std::io::{self, Cursor};
 
 #[toml_cfg::toml_config]
 pub struct Config {
@@ -52,11 +54,67 @@ pub struct Config {
     etp_password: &'static str,
 }
 
-pub fn etp_get_server_capabilities() {
-    // ETP Spec  4.3.1
-    // TODO: GetCap
-    // http://{url}/.well-known/etp-server- capabilities
-    // Strip the wss: or ws: if present
+pub fn etp_get_server_capabilities(u: &str) -> Result<ServerCapabilities, error::Error> {
+    // Fix up URL for well known endpoint
+    let mut url = Url::parse(u)?;
+
+    if url.scheme() == "ws" {
+        url.set_scheme("http").expect("invalid url scheme");
+    }
+    if url.scheme() == "wss" {
+        url.set_scheme("https").expect("invalid url scheme");
+    }
+    url.path_segments_mut().unwrap().push(""); // Ensure trailing slash so it dosn't get pruned !
+
+    let url = url
+        .join(
+            "./.well-known/etp-server-capabilities?GetVersion=etp12.energistics.org&$format=binary",
+        )
+        .unwrap();
+
+    // Get the Server Cap
+    let resp = match reqwest::blocking::get(url.as_str()) {
+        Err(err) => return Err(error::Error::Simple(err.to_string())),
+        Ok(resp) => resp,
+    };
+
+    // Various error checks
+    if resp.status() != 200 {
+        return Err(error::Error::Simple(format!(
+            "Invalid Response Code: {}",
+            resp.status()
+        )));
+    }
+
+    match resp.headers().get("content-type") {
+        Some(ct) => {
+            if ct != "avro/binary" {
+                return Err(error::Error::Simple(
+                    "Content Type not avro/binary".to_string(),
+                ));
+            }
+        }
+        None => return Err(error::Error::Simple("No Content Type".to_string())),
+    };
+
+    // Deserialize
+    let msg_schema = MsgSchema::new();
+
+    let mut cap_bytes = match resp.bytes() {
+        // Read Body
+        Err(err) => return Err(error::Error::Simple(err.to_string())),
+        Ok(cap) => cap.reader(),
+    };
+
+    let servercap = from_value::<ServerCapabilities>(&msg_schema.deserialize_any(
+        (
+            "Energistics.Etp.v12.Datatypes".to_string(),
+            "ServerCapabilities".to_string(),
+        ),
+        &mut cap_bytes,
+    )?)?;
+
+    Ok(servercap)
 }
 
 pub fn etp_connect(
@@ -146,11 +204,14 @@ pub fn etp_connect(
 #[test]
 fn test_connect() {
     let app_config = CONFIG;
+    let etp_server_url = "ws://localhost:9999/eml/etp";
+
+    let _servercap = etp_get_server_capabilities(etp_server_url).unwrap();
 
     let request_session = RequestSession::default();
 
     let mut session = match etp_connect(
-        "ws://localhost:9999/eml/etp",
+        etp_server_url,
         app_config.etp_user,
         app_config.etp_password,
         request_session,

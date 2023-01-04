@@ -39,6 +39,7 @@ pub struct MsgSchema {
     parsed_schemata: Vec<Schema>,
     messageid_schema: HashMap<(usize, usize), usize>,
     messageid_name: HashMap<(usize, usize), String>,
+    any_schema: HashMap<(String, String), usize>,
     messageheader_schema: Schema,
 }
 
@@ -52,6 +53,7 @@ impl MsgSchema {
 
         let mut messageid_schema: HashMap<(usize, usize), usize> = HashMap::new();
         let mut messageid_name: HashMap<(usize, usize), String> = HashMap::new();
+        let mut any_schema: HashMap<(String, String), usize> = HashMap::new();
 
         for (pos, schema) in schemata.iter().enumerate() {
             // Make the lookup table for protocol message Schemas
@@ -64,6 +66,9 @@ impl MsgSchema {
                         Some(v) => v.as_str(),
                         None => "",
                     };
+                    let nm = &name.name.as_str();
+
+                    any_schema.insert((ns.to_string(), nm.to_string()), pos);
 
                     let n = ns.strip_prefix("Energistics.Etp.v12.Protocol.");
 
@@ -104,6 +109,7 @@ impl MsgSchema {
             messageid_schema: messageid_schema,
             messageid_name: messageid_name,
             messageheader_schema: messageheader_schema,
+            any_schema: any_schema,
         }
     }
 
@@ -144,6 +150,25 @@ impl MsgSchema {
             None => {
                 return Err(Error::ValidationWithReason(
                     "Can't find root schema for specified message".to_string(),
+                ))
+            }
+            Some(v) => {
+                let schema_root = &self.parsed_schemata[*v];
+                let schemata: Vec<&Schema> = self.parsed_schemata.iter().collect();
+                return from_avro_datum_schemata(&schema_root, schemata.as_slice(), reader, None);
+            }
+        }
+    }
+
+    pub fn deserialize_any<R: Read>(
+        &self,
+        key: (String, String),
+        reader: &mut R,
+    ) -> AvroResult<Value> {
+        match self.any_schema.get(&key) {
+            None => {
+                return Err(Error::ValidationWithReason(
+                    "Can't find root schema for specified record".to_string(),
                 ))
             }
             Some(v) => {

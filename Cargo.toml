@@ -2,14 +2,21 @@
 name = "etp-rs"
 version = "0.1.0"
 edition = "2021"
+authors = ["Mark Farnan"]
+description = "Energistics Transport Protocol (ETP) 1.2 Client Library"
+license = "Apache 2.0"
+
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 serde = { version = "1.0.151", features = ["derive"] }
 
-#serde_bytes = { path = "../serde-bytes" }#serde_bytes = "0.11"
+#serde_bytes = { path = "../serde-bytes" }
+#serde_bytes = "0.11"
 #apache-avro = { version = "0.15.0", features = ["derive"] }
+bytes = { version = "1.0" }
+
 serde_bytes = { git = "https://github.com/markfarnan/bytes", branch = "etp-working" }
 apache-avro = { git = "https://github.com/markfarnan/avro", branch = "etp-working" }
 url = "2.3.1"
@@ -20,8 +27,7 @@ log = "0.4.17"
 thiserror = { default-features = false, version = "1.0.38" }
 flate2 = "1.0.25"
 libflate = "1.2.0"
-
-
+reqwest = { version = "0.11", features = ["blocking"] }
 [dependencies.uuid]
 version = "1.2.2"
 features = [
