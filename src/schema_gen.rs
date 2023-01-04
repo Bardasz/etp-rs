@@ -33,7 +33,8 @@
 // 4. Add 'Null' to the top of DataValueEnum
 // 5. Rename UnionArrayOfBooleanArrayOfIntArrayOfLongArrayOfFloatArrayOfDoubleArrayOfStringBytes to AnyArrayUnion
 // 6. Put #[serde(with = "serde_bytes")]  above EVERY use of Uuid   (search for ': Uuid,' some 27 entries.)
-// 7. Update Protocol enum with absolute protocol numbers. (See struct below)
+// 7. Rename 'Self' to 'Self_'  in ContextScopeKind   (Self is a reserved word)
+// 8. Update Protocol enum with absolute protocol numbers. (See struct below)
 
 // pub enum Protocol {
 //     Core = 0,
@@ -1978,8 +1979,8 @@ fn default_dataobject_data() -> Vec<u8> {
     Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Clone, serde::Deserialize, serde::Serialize,
 )]
 pub enum ContextScopeKind {
-    #[serde(rename = "selfonly")]
-    Selfonly,
+    #[serde(rename = "self")]
+    Self_, // Renamed with underscore as 'Self' is a reserved word
     #[serde(rename = "sources")]
     Sources,
     #[serde(rename = "targets")]

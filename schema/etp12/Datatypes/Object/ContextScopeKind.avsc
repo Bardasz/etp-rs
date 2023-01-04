@@ -4,7 +4,7 @@
 	"name": "ContextScopeKind",
 	"symbols":
 	[
-		"selfonly",
+		"self",
 		"sources",
 		"targets",
 		"sourcesOrSelf",
