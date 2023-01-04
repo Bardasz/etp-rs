@@ -7,9 +7,11 @@ edition = "2021"
 
 [dependencies]
 serde = { version = "1.0.151", features = ["derive"] }
-#serde_bytes = "0.11"
-serde_bytes = { path = "../serde-bytes" }
-apache-avro = { version = "0.15.0", features = ["derive"] }
+
+#serde_bytes = { path = "../serde-bytes" }#serde_bytes = "0.11"
+#apache-avro = { version = "0.15.0", features = ["derive"] }
+serde_bytes = { git = "https://github.com/markfarnan/bytes", branch = "etp-working" }
+apache-avro = { git = "https://github.com/markfarnan/avro", branch = "etp-working" }
 url = "2.3.1"
 http-auth-basic = "0.3.3"
 tungstenite = "0.18.0"
@@ -27,6 +29,3 @@ features = [
     "fast-rng",          # Use a faster (but still sufficiently random) RNG
     "macro-diagnostics", # Enable better diagnostics for compile-time UUIDs
 ]
-
-[patch.crates-io]
-apache-avro = { path = "../apache-avro/lang/rust/avro" }
